@@ -1,0 +1,12 @@
+ef97f9c8c4193eded3c600ffbc467904 *DESCRIPTION
+c8ecf9caeb1e31ecd7451375d8faf1a3 *LICENSE
+c61ab4bf13980e39191e557c646b1113 *NAMESPACE
+4f3e9625273eecd0983fea95cbf31291 *R/data.R
+1f69c7fe3e11eaa48defdfa17410fff0 *R/impedance_summary.R
+55befd5f66b1c590c1d0671a17c78a2e *R/lfp_data.R
+4485559d42de28cb4a1129b790f203a9 *R/summary_long.R
+5b79b6e7c161829786267fc90396da7c *data/dataset.rda
+792c591ee528345fc0e257e3d2760aa4 *man/dataset.Rd
+37f83693aee80507c610fcb5da32289a *man/impedance_summary.Rd
+bcb44c0df3043495c9b0d18c193a07c4 *man/lfp_data.Rd
+a48fec98672734cae68b9139d05cff0b *man/summary_long.Rd
