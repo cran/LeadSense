@@ -147,11 +147,28 @@ lfp_data <- function(dataset = NULL) {
   if (!is.null(dataset$LfpMontageTimeDomain$TimeDomainData)) {
     for (i in seq_along(dataset$LfpMontageTimeDomain$TimeDomainData)) {
       plot(dataset$LfpMontageTimeDomain$TimeDomainData[[i]], type = "l",
-           main = paste("Time-Domain Signal for Pass", i),
-           xlab = "Time (samples)", ylab = "Amplitude",
+           main = paste("Time-Domain Signal - Channel", dataset$LfpMontageTimeDomain$Channel[[i]]),
+           xlab = "Time (seconds)", ylab = "Amplitude",
            col = rainbow(30)[i], lwd = 2)
     }
   }
+
+  # Time-domain signals plot with actual channel labels and time in seconds
+  if (!is.null(dataset$LfpMontageTimeDomain$TimeDomainData)) {
+    for (i in seq_along(dataset$LfpMontageTimeDomain$TimeDomainData)) {
+
+      signal <- dataset$LfpMontageTimeDomain$TimeDomainData[[i]]
+      sample_rate <- dataset$LfpMontageTimeDomain$SampleRateInHz[[i]]
+      time <- seq(0, length(signal) - 1) / sample_rate  # Time in seconds
+
+      plot(time, signal, type = "l",
+           main = paste("Time-Domain Signal Quality Check \n Channel", dataset$LfpMontageTimeDomain$Channel[[i]]),
+           xlab = "Time (seconds)", ylab = "Amplitude (uV)",
+           col = "black", lwd = 2)
+    }
+  }
+
+
 
   message("Returning structured LFP dataset.")
 
